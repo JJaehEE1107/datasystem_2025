@@ -174,6 +174,41 @@ Install datasystem_2025 using one of the following methods:
 ❯ docker build -t JJaehEE1107/datasystem_2025 .
 ```
 
+**Using `docker compose`** &nbsp; [<img align="center" src="https://img.shields.io/badge/Docker-2CA5E0.svg?style={badge_style}&logo=docker&logoColor=white" />](https://www.docker.com/)
+
+```sh
+❯ % docker compose up -d .
+```
+**Required 'PostgreSQL Table Setup'`** &nbsp; <img align="center" src="https://img.shields.io/badge/PostgreSQL-4169E1.svg?style={badge_style}&logo=postgresql&logoColor=white" />
+```sh
+❯ psql -h localhost -U your_username -d datasystem_db
+```
+**Required 'Configuration' ** &nbsp; [<img align="center" src="https://img.shields.io/badge/.env-Informational.svg?style={badge_style}&logo=dotenv&logoColor=white" />]
+
+The application requires a .env file in the root directory to load essential credentials and connection details.
+This includes FRED API key, MinIO access info, and PostgreSQL database config.
+
+```sh
+env
+Copy
+Edit
+# --- FRED API ---
+FRED_API_KEY=your_fred_api_key_here
+
+# --- PostgreSQL ---
+POSTGRES_HOST=localhost
+POSTGRES_PORT=5432
+POSTGRES_DB=datasystem_db
+POSTGRES_USER=your_username
+POSTGRES_PASSWORD=your_password
+
+# --- MinIO (Optional, if used for raw data storage) ---
+MINIO_ACCESS_KEY=minioadmin
+MINIO_SECRET_KEY=minioadmin
+MINIO_ENDPOINT=http://localhost:9000
+✅ Make sure this file is created before running Docker or executing the app locally.
+You can rename .env.example to .env and fill in your credentials.
+```
 
 
 
@@ -193,56 +228,7 @@ Run datasystem_2025 using the following command:
 ```
 
 
-###  Testing
-Run the test suite using the following command:
-**Using `pip`** &nbsp; [<img align="center" src="https://img.shields.io/badge/Pip-3776AB.svg?style={badge_style}&logo=pypi&logoColor=white" />](https://pypi.org/project/pip/)
 
-```sh
-❯ pytest
-```
-
-
----
-##  Project Roadmap
-
-- [X] **`Task 1`**: <strike>Implement feature one.</strike>
-- [ ] **`Task 2`**: Implement feature two.
-- [ ] **`Task 3`**: Implement feature three.
-
----
-
-##  Contributing
-
-- **💬 [Join the Discussions](https://github.com/JJaehEE1107/datasystem_2025/discussions)**: Share your insights, provide feedback, or ask questions.
-- **🐛 [Report Issues](https://github.com/JJaehEE1107/datasystem_2025/issues)**: Submit bugs found or log feature requests for the `datasystem_2025` project.
-- **💡 [Submit Pull Requests](https://github.com/JJaehEE1107/datasystem_2025/blob/main/CONTRIBUTING.md)**: Review open PRs, and submit your own PRs.
-
-<details closed>
-<summary>Contributing Guidelines</summary>
-
-1. **Fork the Repository**: Start by forking the project repository to your github account.
-2. **Clone Locally**: Clone the forked repository to your local machine using a git client.
-   ```sh
-   git clone https://github.com/JJaehEE1107/datasystem_2025
-   ```
-3. **Create a New Branch**: Always work on a new branch, giving it a descriptive name.
-   ```sh
-   git checkout -b new-feature-x
-   ```
-4. **Make Your Changes**: Develop and test your changes locally.
-5. **Commit Your Changes**: Commit with a clear message describing your updates.
-   ```sh
-   git commit -m 'Implemented new feature x.'
-   ```
-6. **Push to github**: Push the changes to your forked repository.
-   ```sh
-   git push origin new-feature-x
-   ```
-7. **Submit a Pull Request**: Create a PR against the original project repository. Clearly describe the changes and their motivations.
-8. **Review**: Once your PR is reviewed and approved, it will be merged into the main branch. Congratulations on your contribution!
-</details>
-
-<details closed>
 <summary>Contributor Graph</summary>
 <br>
 <p align="left">
@@ -252,16 +238,4 @@ Run the test suite using the following command:
 </p>
 </details>
 
----
 
-##  License
-
-This project is protected under the [SELECT-A-LICENSE](https://choosealicense.com/licenses) License. For more details, refer to the [LICENSE](https://choosealicense.com/licenses/) file.
-
----
-
-##  Acknowledgments
-
-- List any resources, contributors, inspiration, etc. here.
-
----
