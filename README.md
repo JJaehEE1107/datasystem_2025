@@ -194,7 +194,7 @@ Copy
 Edit
 # --- FRED API ---
 FRED_API_KEY=your_fred_api_key_here
-
+_PIP_ADDITIONAL_REQUIREMENTS=pandas yfinance==0.2.58 fredapi pandas_datareader psycopg2-binary virtualenv boto3 sqlalchemy pandas-datareader minio
 # --- PostgreSQL ---
 POSTGRES_HOST=localhost
 POSTGRES_PORT=5432
