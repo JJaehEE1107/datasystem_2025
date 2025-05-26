@@ -1,5 +1,6 @@
 <p align="left">
-    <img src="https://img.icons8.com/?size=512&id=55494&format=png" align="left" width="30%">
+    <img src="assets/logo.webp" align="left" width="30%">
+	
 </p>
 <p align="left"><h1 align="left">DATASYSTEM_2025</h1></p>
 <p align="left">
